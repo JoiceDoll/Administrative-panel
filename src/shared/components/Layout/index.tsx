@@ -26,9 +26,13 @@ import StarBorder from "@mui/icons-material/StarBorder";
 export default function MenuAppBar() {
   const [auth, setAuth] = React.useState(true);
   const [open, setOpen] = React.useState(true);
-
+  const [openAppBar, setOpenAppBar] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
 
+  const handleOpenCloseAppBar = () => {
+    setOpenAppBar(false);
+    console.log("teste");
+  };
   const handleMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
   };
@@ -51,6 +55,7 @@ export default function MenuAppBar() {
               color="inherit"
               aria-label="menu"
               sx={{ mr: 2 }}
+              onClick={handleOpenCloseAppBar}
             >
               <MenuIcon />
             </IconButton>
@@ -102,7 +107,7 @@ export default function MenuAppBar() {
           aria-labelledby="nested-list-subheader"
           subheader={
             <ListSubheader component="div" id="nested-list-subheader">
-              Nested List Items
+              Painel
             </ListSubheader>
           }
         >
@@ -110,19 +115,19 @@ export default function MenuAppBar() {
             <ListItemIcon>
               <SendIcon />
             </ListItemIcon>
-            <ListItemText primary="Sent mail" />
+            <ListItemText primary="Grupos e usuários" />
           </ListItemButton>
           <ListItemButton>
             <ListItemIcon>
               <DraftsIcon />
             </ListItemIcon>
-            <ListItemText primary="Drafts" />
+            <ListItemText primary="Gestão" />
           </ListItemButton>
           <ListItemButton onClick={handleClick}>
             <ListItemIcon>
               <InboxIcon />
             </ListItemIcon>
-            <ListItemText primary="Inbox" />
+            <ListItemText primary="Financeiro" />
             {open ? <ExpandLess /> : <ExpandMore />}
           </ListItemButton>
           <Collapse in={open} timeout="auto" unmountOnExit>
