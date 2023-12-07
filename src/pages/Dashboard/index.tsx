@@ -1,7 +1,9 @@
-export default function Dashboard(){
-    return(
-        <>
-        <h1>Dashboard</h1>
-        </>
-    )
+import Layout from "../../shared/components/Layout";
+
+export default function Dashboard() {
+  return (
+    <>
+      <Layout/>
+    </>
+  );
 }
